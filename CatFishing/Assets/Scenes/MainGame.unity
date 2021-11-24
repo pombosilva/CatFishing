@@ -580,8 +580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8608f66029327a94692a4e70292d918d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallFish: {fileID: 7684343220132275425, guid: 7ff8c5f24a18ae8448e0c5798e81deab, type: 3}
-  bigFish: {fileID: 2708510969115741123, guid: 4dab933ded39b9d43be37cbcbc5be526, type: 3}
+  objectsToSpawn:
+  - {fileID: 7684343220132275425, guid: 7ff8c5f24a18ae8448e0c5798e81deab, type: 3}
+  - {fileID: 2708510969115741123, guid: 4dab933ded39b9d43be37cbcbc5be526, type: 3}
   timeToSpawn: 0
 --- !u!1 &748916182
 GameObject:
@@ -1286,7 +1287,7 @@ GameObject:
   - component: {fileID: 2039820037}
   m_Layer: 0
   m_Name: HookAndLine
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

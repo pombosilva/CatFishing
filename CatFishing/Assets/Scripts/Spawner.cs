@@ -5,8 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    public GameObject smallFish;
-    public GameObject bigFish;
+    public List<GameObject> objectsToSpawn = new List<GameObject>();
     public float timeToSpawn;
 
     // Start is called before the first frame update
@@ -27,19 +26,13 @@ public class Spawner : MonoBehaviour
     }
 
     void spawnObject() {
-        int objectToSpawn = 0;  //gera aleatoriamente o objeto a aparecer
+        int index = 0;          //gera aleatoriamente o objeto a aparecer
         int sideToSpawn = 1;    //gera aleatoriamente o lado em que o objeto aparece
+        //TODO mudar a orientação do objeto a dar spawn consoante o lado em que aparece
+        GameObject spawn = objectsToSpawn[index];
         float heightToSpawn = 0;//gera aleatoriamente a altura do objeto
         Vector3 initialPosition = new Vector3(sideToSpawn*11, 0, heightToSpawn);
-        switch(objectToSpawn) {
-            case 0:
-                //GameObject object = smallFish.GetComponent<SpriteRenderer>
-                Instantiate(smallFish, initialPosition, transform.rotation);
-            break;
-            case 1:
-                //GameObject object = smallFish.GetComponent<SpriteRenderer>
-                Instantiate(bigFish, initialPosition, transform.rotation);
-            break;
-        } 
+
+        Instantiate(spawn, initialPosition, transform.rotation);
     }
 }
