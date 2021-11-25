@@ -92,8 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8367179915826062340}
   - component: {fileID: 1648094747107083814}
+  - component: {fileID: 3471603245474292874}
   - component: {fileID: 4617481554370851648}
   - component: {fileID: -7011588642803928399}
+  - component: {fileID: 9110837912476235952}
   m_Layer: 0
   m_Name: SmallFish
   m_TagString: Untagged
@@ -167,6 +169,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3471603245474292874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684343220132275425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9652b3be1009cf4c9ddd21bd41be431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sideToSpawn: -1
 --- !u!61 &4617481554370851648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,3 +229,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9110837912476235952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684343220132275425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5545792e62610ce499cd7eb0e5b63044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sideToSpawn: -1
