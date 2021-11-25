@@ -27,11 +27,12 @@ public class Spawner : MonoBehaviour
 
     void spawnObject() {
         int index = 0;          //gera aleatoriamente o objeto a aparecer
-        int sideToSpawn = 1;    //gera aleatoriamente o lado em que o objeto aparece
-        //TODO mudar a orientação do objeto a dar spawn consoante o lado em que aparece
-        GameObject spawn = objectsToSpawn[index];
+        int sideToSpawn = -1;    //gera aleatoriamente o lado em que o objeto aparece
         float heightToSpawn = 0;//gera aleatoriamente a altura do objeto
-        Vector3 initialPosition = new Vector3(sideToSpawn*11, 0, heightToSpawn);
+        Vector3 initialPosition = new Vector3(sideToSpawn*11, heightToSpawn, 0);
+        //TODO mudar a orientação do objeto a dar spawn consoante o lado em que aparece ???
+        GameObject spawn = objectsToSpawn[index];
+        spawn.transform.localScale = new Vector3(-1f*sideToSpawn, 1f, 1f);
 
         Instantiate(spawn, initialPosition, transform.rotation);
     }
