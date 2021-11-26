@@ -18,13 +18,13 @@ public class TimerController : MonoBehaviour
     private void Awake(){
     
         instance = this;
-    
+        
     }
 
     // Start is called before the first frame update
     void Start()
     { 
-        timeCounter.text = "Time: 02:00.00";
+        timeCounter.text = "02:00";
         timerGoing = true;
         elapsedTime = 120f;
     }
@@ -36,7 +36,7 @@ public class TimerController : MonoBehaviour
             print(Time.deltaTime);
             elapsedTime -= Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
+            string timePlayingStr = timePlaying.ToString("mm':'ss");
             timeCounter.text = timePlayingStr;
 
             print(timePlayingStr);
