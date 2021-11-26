@@ -5,7 +5,7 @@ using System;
 
 public class ProbabilityDensityFunctions {
     public static System.Random r = new System.Random();
-    public static int TypeOfObjectL1(){
+    public static int TypeOfObjectL1() {
         double u = r.NextDouble();
         if (u < 0.5)
             return 0;
@@ -19,7 +19,7 @@ public class ProbabilityDensityFunctions {
             return 4;
     }
     
-    public static int TypeOfObjectL2(){
+    public static int TypeOfObjectL2() {
         double u = r.NextDouble();
             if (u < 0.2)
                 return 0;
@@ -43,27 +43,27 @@ public class ProbabilityDensityFunctions {
             return 1;
     }
 
-    public static double TimeBetweenObjectsL1(){
+    public static double TimeBetweenObjectsL1() {
         double u = r.NextDouble();
         return -2 * Math.Log(1-u*((Math.Exp(1)-1)/Math.Exp(1))) + 2;   
     }
 
-    public static double TimeBetweenObjectsL2(){
+    public static double TimeBetweenObjectsL2() {
         double u = r.NextDouble();
         return -1 * Math.Log(1-u*((Math.Exp(2)-1)/Math.Exp(2))) + 1;
     }
 
-    public static double VelocityAdagio(){
+    public static double VelocityAdagio() {
         double u = r.NextDouble();
         return 0.5 * Math.Pow(-1*Math.Log(1-u*0.88276),1/1.1);
     }
 
-    public static double VelocityAllegro(){
+    public static double VelocityAllegro() {
         double u = r.NextDouble();
         return Math.Pow((-1*Math.Log(1-u*((Math.E - 1)/Math.E))),1/3f);
     }
 
-    public static double PositionInHeight(){
+    public static double PositionInHeight() {
         double u = r.NextDouble();
         return ErrorFunction.InverseErf( u*( ErrorFunction.Erf(5/(4*Math.Sqrt(2)))-ErrorFunction.Erf(-5/(4*Math.Sqrt(2)))) + ErrorFunction.Erf(-5/(4*Math.Sqrt(2)))) * 4*Math.Sqrt(2) + 5;
     }

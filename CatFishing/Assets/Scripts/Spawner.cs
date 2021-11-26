@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
-{
+public class Spawner : MonoBehaviour {
     public int level = 1;
+    public TimerController timer; 
     public List<GameObject> objectsToSpawn = new List<GameObject>();
     public double timeToSpawn = 1;
 
@@ -14,7 +14,9 @@ public class Spawner : MonoBehaviour
             timeToSpawn -= Time.deltaTime;
         else{
             spawnObject();
+            level = timer.getLevel();
             timeToSpawn = ( level == 1 ? ProbabilityDensityFunctions.TimeBetweenObjectsL1() : ProbabilityDensityFunctions.TimeBetweenObjectsL2() );
+            print(level);
         }
     }
 
