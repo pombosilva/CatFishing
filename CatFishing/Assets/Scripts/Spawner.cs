@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
+    public int level = 1;
     public List<GameObject> objectsToSpawn = new List<GameObject>();
-    public double timeToSpawn;
-
-    // Start is called before the first frame update
-    void Start() {
-        timeToSpawn = ProbabilityDensityFunctions.TimeBetweenObjectsL1();               //gera aleatoriamente o tempo
-    }
+    public double timeToSpawn = 1;
 
     // Update is called once per frame
     void Update() {
@@ -19,21 +14,20 @@ public class Spawner : MonoBehaviour
             timeToSpawn -= Time.deltaTime;
         else{
             spawnObject();
-            timeToSpawn = ProbabilityDensityFunctions.TimeBetweenObjectsL1();           //gera aleatoriamente o tempo
+            timeToSpawn = ( level == 1 ? ProbabilityDensityFunctions.TimeBetweenObjectsL1() : ProbabilityDensityFunctions.TimeBetweenObjectsL2() );
         }
     }
 
-    void spawnObject() {
-        int index = ProbabilityDensityFunctions.TypeOfObjectL1();                       //gera aleatoriamente o objeto a aparecer
-        if(index>1)
-            index=1;
-        int sideToSpawn = ProbabilityDensityFunctions.Side();                           //gera aleatoriamente o lado em que o objeto aparece
-        float heightToSpawn = (float) ((6f/10f) * ProbabilityDensityFunctions.PositionInHeight() - 5f);   //gera aleatoriamente a altura do objeto
+    void spawnObject() {                 
+        int index = ( level == 1 ? ProbabilityDensityFunctions.TypeOfObjectL1() : ProbabilityDensityFunctions.TypeOfObjectL2() );   //gera aleatoriamente o objeto a aparecer
+        int sideToSpawn = ProbabilityDensityFunctions.Side();                                                                       //gera aleatoriamente o lado em que o objeto aparece
+        float heightToSpawn = (float) ((6f/10f) * ProbabilityDensityFunctions.PositionInHeight() - 5f);                             //gera aleatoriamente a altura do objeto
         Vector3 initialPosition = new Vector3(sideToSpawn*11, heightToSpawn, 0);
         GameObject spawn = objectsToSpawn[index];
 
         MoveParent m = spawn.GetComponent<MoveParent>();
         m.sideToSpawn = sideToSpawn;
+        
         Instantiate(spawn, initialPosition, transform.rotation);
     }
 }

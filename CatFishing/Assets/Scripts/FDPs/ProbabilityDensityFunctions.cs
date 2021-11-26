@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ProbabilityDensityFunctions : MonoBehaviour {
+public class ProbabilityDensityFunctions {
+    public static System.Random r = new System.Random();
     public static int TypeOfObjectL1(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         if (u < 0.5)
             return 0;
@@ -20,7 +20,6 @@ public class ProbabilityDensityFunctions : MonoBehaviour {
     }
     
     public static int TypeOfObjectL2(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
             if (u < 0.2)
                 return 0;
@@ -37,7 +36,6 @@ public class ProbabilityDensityFunctions : MonoBehaviour {
     }
 
     public static int Side() {
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         if (u < 0.5)
             return -1;
@@ -46,31 +44,26 @@ public class ProbabilityDensityFunctions : MonoBehaviour {
     }
 
     public static double TimeBetweenObjectsL1(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         return -2 * Math.Log(1-u*((Math.Exp(1)-1)/Math.Exp(1))) + 2;   
     }
 
     public static double TimeBetweenObjectsL2(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         return -1 * Math.Log(1-u*((Math.Exp(2)-1)/Math.Exp(2))) + 1;
     }
 
     public static double VelocityAdagio(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         return 0.5 * Math.Pow(-1*Math.Log(1-u*0.88276),1/1.1);
     }
 
     public static double VelocityAllegro(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         return Math.Pow((-1*Math.Log(1-u*((Math.E - 1)/Math.E))),1/3f);
     }
 
     public static double PositionInHeight(){
-        System.Random r = new System.Random();
         double u = r.NextDouble();
         return ErrorFunction.InverseErf( u*( ErrorFunction.Erf(5/(4*Math.Sqrt(2)))-ErrorFunction.Erf(-5/(4*Math.Sqrt(2)))) + ErrorFunction.Erf(-5/(4*Math.Sqrt(2)))) * 4*Math.Sqrt(2) + 5;
     }

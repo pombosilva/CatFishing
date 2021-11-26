@@ -580,9 +580,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8608f66029327a94692a4e70292d918d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 2
   objectsToSpawn:
   - {fileID: 7684343220132275425, guid: 7ff8c5f24a18ae8448e0c5798e81deab, type: 3}
   - {fileID: 2708510969115741123, guid: 4dab933ded39b9d43be37cbcbc5be526, type: 3}
+  - {fileID: 4461839521594111657, guid: b40d3ccbe22973d4ab3fde116ebc7906, type: 3}
+  - {fileID: 3064868422321316285, guid: 1b17fd133c36d7e44bf5e35a9561c340, type: 3}
+  - {fileID: 7923274811641364827, guid: 3f57b96cbcbdd0d41914b02baccab3a9, type: 3}
+  - {fileID: 4535087982576357406, guid: 4ae30573ac0affc44a2a1df9fc750370, type: 3}
   timeToSpawn: 0
 --- !u!1 &748916182
 GameObject:

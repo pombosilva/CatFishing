@@ -19,7 +19,7 @@ public class ScreenBounds : MonoBehaviour
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, 3);
+        viewPos.y = Mathf.Clamp(viewPos.y, -screenBounds.y + objectHeight, 3);
         transform.position = viewPos;
     }
 }
