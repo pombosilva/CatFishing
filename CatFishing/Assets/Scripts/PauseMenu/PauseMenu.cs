@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour {
     public void Pause() {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+     
     }
 
     public void Resume() {
@@ -20,6 +21,7 @@ public class PauseMenu : MonoBehaviour {
     public void Home(int sceneID) {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneID);
+        
     }
 
 }
