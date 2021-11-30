@@ -9,7 +9,6 @@ public class TimerController : MonoBehaviour {
     private TimeSpan timePlaying;
     private float remainingTime;
 
-
     // Start is called before the first frame update
     void Start() { 
         timeCounter.text = "02:00";
@@ -18,15 +17,11 @@ public class TimerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(EndTimer()) {
+        if(remainingTime >= 0f) {
             remainingTime -= Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(remainingTime);
             timeCounter.text = timePlaying.ToString("mm':'ss");
         }
-    }
-
-    public bool EndTimer() {
-        return remainingTime >= 0f;
     }
 
     public int getLevel() {

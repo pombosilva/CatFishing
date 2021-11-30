@@ -16,7 +16,6 @@ public class Spawner : MonoBehaviour {
             spawnObject();
             level = timer.getLevel();
             timeToSpawn = ( level == 1 ? ProbabilityDensityFunctions.TimeBetweenObjectsL1() : ProbabilityDensityFunctions.TimeBetweenObjectsL2() );
-            print(level);
         }
     }
 

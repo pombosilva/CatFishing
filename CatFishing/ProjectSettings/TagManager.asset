@@ -62,3 +62,6 @@ TagManager:
   - name: Fishes
     uniqueID: 3531938379
     locked: 0
+  - name: Ink
+    uniqueID: 1154426381
+    locked: 0

@@ -7,7 +7,7 @@ public class HookAndLine : MonoBehaviour
     public LineRenderer lr;
     public Transform hook;
     public float hookMoveSpeed = 5f;
-    private Vector2 boxSize = new Vector2(0.1f, 0.1f);
+    private Vector2 boxSize = new Vector2(0.1f, 0.2f);
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class HookAndLine : MonoBehaviour
     }
 
     public void checkInteraction() {
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position,boxSize,0,Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(new Vector3(transform.position.x, transform.position.y - 0.075f, transform.position.z), boxSize, 0, Vector2.zero);
         if(hits.Length>0) {
             foreach (RaycastHit2D rc in hits) {
                 if(rc.transform.GetComponent<MoveParent>()) {
