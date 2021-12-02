@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Garbage : Adagio {
+
     public override void interact() {
         if(!isCaught) {
-            //isCaught = true;
+            Lifes.LoseLife();
             Destroy(this.gameObject);
         }
     }
