@@ -6,7 +6,7 @@ public class Garbage : Adagio {
 
     public override void interact() {
         if(!isCaught) {
-            Lifes.LoseLife();
+            Lives.LoseLife();
             Destroy(this.gameObject);
         }
     }
