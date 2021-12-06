@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour {
 [SerializeField] GameObject pauseMenu;
 [SerializeField] GameObject controls;
 
+
     public void Pause() {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -18,16 +19,20 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
-    public void Home(int sceneID) {
+    public void GoToScene(int sceneID) {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneID);
     }
 
-    public void Defs() {
+    public void Defs(int sceneID) {
+        if(sceneID == 0)
+            pauseMenu.SetActive(false);
         controls.SetActive(true);
     }
 
-    public void ResumeDefs(){
+    public void ResumeDefs(int sceneID) {
+        if(sceneID == 0)
+            pauseMenu.SetActive(true);
         controls.SetActive(false);
     }
 }
