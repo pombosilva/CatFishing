@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Garbage : Adagio {
 
+    public SpriteRenderer spriteRenderer;
     public override void interact() {
         if(!isCaught) {
+            isCaught = true;
             Lives.LoseLife();
-            Destroy(this.gameObject);
+            AudioSource audioSource = GetComponent<AudioSource>();
+            spriteRenderer.enabled = false;
+            audioSource.Play();
+            Destroy(this.gameObject, audioSource.clip.length);
         }
     }
 }

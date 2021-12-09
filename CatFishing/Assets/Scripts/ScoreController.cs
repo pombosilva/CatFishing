@@ -20,4 +20,8 @@ public class ScoreController : MonoBehaviour {
     public static void Increment(int score) {
         counterValue += score;
     }
+
+    public static int GetScore() {
+        return counterValue;
+    }
 }

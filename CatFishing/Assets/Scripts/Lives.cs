@@ -19,7 +19,7 @@ public class Lives : MonoBehaviour {
             if(index == lives){
                 Destroy(worms[index--]);
                 if(lives == 0)
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(2);
             }
         }
     }

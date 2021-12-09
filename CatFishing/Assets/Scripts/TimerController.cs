@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerController : MonoBehaviour {
     public Text timeCounter;
@@ -17,10 +18,12 @@ public class TimerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(remainingTime >= 0f) {
+        if(remainingTime > 0f) {
             remainingTime -= Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(remainingTime);
             timeCounter.text = timePlaying.ToString("mm':'ss");
+        } else {
+            SceneManager.LoadScene(2);
         }
     }
 
