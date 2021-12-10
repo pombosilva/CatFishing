@@ -13,7 +13,7 @@ public class TimerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() { 
         timeCounter.text = "02:00";
-        remainingTime = 120f;
+        remainingTime = 120f; // change here to debug
     }
 
     // Update is called once per frame

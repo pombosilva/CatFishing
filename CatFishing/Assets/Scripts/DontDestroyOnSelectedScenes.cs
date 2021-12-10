@@ -28,7 +28,7 @@ public class DontDestroyOnSelectedScenes : MonoBehaviour {
 
         // iterate through the objects with this component, deleting those with matching identifiers
         foreach (DontDestroyOnSelectedScenes obj in collection)
-            if(obj == this) // avoid deleting the object running this check
+            if(obj == this)
                 if (obj.instanceName == instanceName)
                     Destroy(obj.gameObject, 1f);
     }
@@ -39,7 +39,7 @@ public class DontDestroyOnSelectedScenes : MonoBehaviour {
         if (!sceneNames.Contains(currentScene)) {
             // unsubscribe to the scene load callback
             SceneManager.sceneLoaded -= OnSceneLoaded;
-            DestroyImmediate(this.gameObject);
+            //Destroy(this.gameObject, 1f);
         }
     }
 }
